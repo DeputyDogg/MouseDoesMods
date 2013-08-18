@@ -1,6 +1,7 @@
 package com.Martijn.MouseDoesMods;
 
 import com.Martijn.MouseDoesMods.blocks.ModBlocks;
+import com.Martijn.MouseDoesMods.core.handler.LocalizationHandler;
 import com.Martijn.MouseDoesMods.core.proxy.CommonProxy;
 import com.Martijn.MouseDoesMods.lib.References;
 
@@ -51,6 +52,9 @@ public class MouseDoesMods {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
+		
+		/* Adds the localizations*/
+		LocalizationHandler.init();
 		
 		/* This is the method which loads all the blocks*/
 		ModBlocks.init();
