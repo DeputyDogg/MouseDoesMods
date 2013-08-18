@@ -1,6 +1,9 @@
 package com.Martijn.MouseDoesMods;
 
+import java.io.File;
+
 import com.Martijn.MouseDoesMods.blocks.ModBlocks;
+import com.Martijn.MouseDoesMods.core.handler.ConfigurationHandler;
 import com.Martijn.MouseDoesMods.core.handler.LocalizationHandler;
 import com.Martijn.MouseDoesMods.core.proxy.CommonProxy;
 import com.Martijn.MouseDoesMods.lib.References;
@@ -52,6 +55,9 @@ public class MouseDoesMods {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
+	
+		/* Starts loading our config*/
+		ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath()+ File.separator + References.MODID + File.separator + References.MODID + ".cfg"));
 		
 		/* Adds the localizations*/
 		LocalizationHandler.init();
